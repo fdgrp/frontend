@@ -9,7 +9,6 @@ const IndexLogged = () => {
     <>
         <Header />
         <Main />
-
     </>
   )
 }

@@ -4,9 +4,6 @@ import { useTypedSelector } from './hooks/useTypedSelector';
 
 import './styles/App.scss';
 
-
-
-
 const App: FC = () => {
 
   const { prompt } = useTypedSelector(state => state.prompt);
