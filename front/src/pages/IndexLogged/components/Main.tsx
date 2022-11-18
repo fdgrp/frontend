@@ -22,10 +22,9 @@ const Main = () => {
                         <img className='item-main__img' height={300} width={300} />
                         <h1 className='item-main__title'>Toyota 2005</h1>
                     </a>
-
                     <a className='main__item item-main'>
                         <img className='item-main__img' height={300} width={300} />
-                        <h1 className='item-main__title'>Add new car</h1>
+                        <h1 className='item-main__title'>Add a new car</h1>
 
                     </a>
                 </div>

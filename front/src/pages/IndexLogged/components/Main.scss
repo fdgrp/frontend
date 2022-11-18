@@ -6,16 +6,12 @@
 
         flex-wrap: wrap;
     }
-    min-height: calc(70vh - 69px);
+    min-height: calc(70vh - 70px);
     padding: 10vh 0 20vh;
     
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
-
-
  
     @media (max-width: 991px) {
         padding: 10px 0;
@@ -24,7 +20,7 @@
 }
 
 .item-main{
-    box-shadow: 0px 0px 4px 1px black;
+    box-shadow: 0px 0px 3px 0.5px gray;
     position: relative;
     flex: 0 0 calc(24% - 20px);
     background-color: gray;
@@ -41,6 +37,7 @@
     height: 100%;
     width: 100%;
     min-width: 300px;
+    text-align: center;
     &__img{
         height: 300px;
         width: 300px;
