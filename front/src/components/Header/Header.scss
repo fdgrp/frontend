@@ -22,7 +22,7 @@
 
     &__drop{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
 
         width: calc(100wv - 20px);
@@ -36,6 +36,7 @@
             background-color: white;
             height: calc(100vh - 56px);
             &._active{
+                overflow-y: auto;
                 z-index: 1000;
                 top: 56px;
             }
@@ -57,7 +58,7 @@
 
         margin-right: 10px;
         @media (max-width: 767px) {
-            font-size: 28px;
+            font-size: 26px;
             &:not(:last-child){
                 margin-bottom: 10px;
 
