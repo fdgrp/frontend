@@ -1,0 +1,118 @@
+.header{
+    &__inner{
+
+        padding: 2px 10px;
+        width: calc(100wv - 20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: rgba(0, 94, 170, 0.733);
+        box-shadow: 0px 0px 5px 1px black;
+        @media (max-width: 767px) {
+            padding: 10px;
+        }
+    }
+    &__logo{
+        font-size: 30px;
+        text-decoration: none;
+
+        color: black;
+    }
+
+    &__drop{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: calc(100wv - 20px);
+        @media (max-width: 767px) {
+            width: 100%;
+            transition: all 0.3s ease 0s;
+            flex-direction: column-reverse;
+            position: absolute;
+            top: -2000px;
+            left: 0;
+            background-color: white;
+            height: calc(100vh - 56px);
+            &._active{
+                z-index: 1000;
+                top: 56px;
+            }
+        }
+    }
+}
+
+.navbar-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+    &__link{
+        font-size: 20px;
+
+        margin-right: 10px;
+        @media (max-width: 767px) {
+            font-size: 28px;
+            &:not(:last-child){
+                margin-bottom: 10px;
+
+            }
+        }
+    }
+}
+
+.user-header{
+    &__img{
+        border-radius: 50%;
+        @media (max-width: 767px) {
+            border: 3px solid rgba(0, 94, 170, 0.733);
+            padding: 2px;
+            margin: 15px 0;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.header__burger {
+    @media (max-width: 767px) {
+        display: block;
+    }
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    & > span,
+    & > span::before,
+    & > span::after { 
+        display: block;
+        content: ''; 
+        position: relative;
+        width: 40px;
+        height: 4px;
+        background-color: black;
+        transition: all .3s linear;
+        border-radius: 15px;
+    }
+    & > span::before {
+      top: -12px;
+    }
+    & > span::after {
+      top: 8px;
+    }
+    &._active > span{
+      background-color: rgba(1, 113, 204, 0.733);
+    }
+    &._active > span::after {
+      transform: rotate(45deg);
+      top: -4px;
+   }
+    &._active > span::before {
+      transform: rotate(-45deg);
+      top: 0px;
+  }
+}

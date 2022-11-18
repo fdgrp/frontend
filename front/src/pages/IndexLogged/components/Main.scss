@@ -1,0 +1,25 @@
+.main{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: calc(100vh - 69px);
+    @media (max-width: 767px) {
+        flex-direction: column;
+
+    }
+}
+
+.item-main{
+    flex: 0 0 25%;
+    background-color: gray;
+    @media (max-width: 767px) {
+        flex: auto;
+    }
+    margin: 10px;
+    &__img{
+        height: 200px;
+        width: 200px;
+    }
+}
