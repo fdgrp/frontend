@@ -10,7 +10,7 @@ const Admin = () => {
 
   return (
     <div className='admin'>
-      {!user['superUser'] ?
+      {user['superUser'] ?
         <div className='admin__inner'>
           <div className='admin__section section-admin'>
             <h1 className='section-admin__title'>Пользователи</h1>

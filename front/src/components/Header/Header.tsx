@@ -35,7 +35,7 @@ const Header = () => {
   function logout() {
     setIsAuth(false)
     setUser({
-      username: "",
+      login: "",
       superUser: false
     })
     localStorage.removeItem('token')
@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__inner">
-        <Link className="header__logo" to="/">ЭлектроПТС</Link>
+        <Link id='logo' className="header__logo" to="/">ЭлектроПТС</Link>
         <div className="header__drop">
           {isAuth ?
             <>
@@ -61,12 +61,13 @@ const Header = () => {
                   <div className='profile-header__info'>
                     <Link className='profile-header__avatar-link' to='/'><img className='profile-header__avatar' width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></Link>
                     <div className='profile-header__info-text'>
-                      <h1 className='profile-header__name'>{user['username'] ? user['username'] : "Имя"}</h1>
+                      <h1 className='profile-header__name'>{user['login'] ? user['login'] : "Имя"}</h1>
                     </div>
                   </div>
                   <div className='profile-header__links'>
                     <Link to='/notRealised' className='profile-header__link'>Профиль</Link>
                     <Link to='/notRealised' className='profile-header__link'>Настройки</Link>
+                    {user['superUser'] ? <Link to='/admin' className='profile-header__link'>Админ панель</Link> : <></>}
                     <button className='profile-header__link' onClick={() => logout()}>Выйти</button>
                   </div>
                 </div>

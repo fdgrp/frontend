@@ -26,16 +26,12 @@ const LoginForm = () => {
     if (response.status == 200) {
       const responseJSON: { access_token: string, id: number, name: string, login: string } = await response.clone().json()
       setUser({
-        username: responseJSON['login'],
+        login: responseJSON['login'],
         superUser: false
       })
       localStorage.setItem("access_token", responseJSON['access_token'])
       setIsAuth(true)
       setPrompt(<></>)
-      console.log(await responseJSON);
-
-      const api = new API()
-      api.setCookie("access_token", responseJSON['access_token'], {})
     } else {
       errorSet((await response.clone().json())['error'])
     }

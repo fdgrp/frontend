@@ -27,15 +27,15 @@ const App: FC = () => {
     const userService = new UserService()
     const response: Response = await userService.get()
     if (response.status == 200) {
-      const responseJSON: { access_token: string, id: number, name: string } = await response.clone().json()
+      const responseJSON: { access_token: string, id: number, login: string } = await response.clone().json()
       setUser({
-        username: responseJSON['name'],
+        login: responseJSON['login'],
         superUser: false
       })
       setIsAuth(true)
     } else {
       setUser({
-        username: "",
+        login: "",
         superUser: false
       })
       setIsAuth(false)

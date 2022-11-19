@@ -1,6 +1,11 @@
 .admin {
 
+    min-height: calc(100vh - 117px);
+
     &__section {
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
     }
 }
 .section-admin {

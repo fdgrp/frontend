@@ -12,18 +12,21 @@ const CarInfo = (props: any) => {
     api.postRequest("/api/car/add", {
       car_info: JSON.stringify(car)
     })
+    document.getElementById('logo')?.click()
   }
-
+  
   return (
     <div className='car-info'>
-      <img className='car-info__img' src="https://github.com/fdgrp/res/blob/main/images/car.png?raw=true" width="500" height="200" />
+      <img className='car-info__img' src="https://github.com/fdgrp/res/blob/main/images/car.png?raw=true" width="400" height="200" />
 
       <div className='car-info__section'>
-        <div className='car-info__title'>Период владения транспортный средством</div>
+        <div className='car-info__title'>Периоды владения транспортный средством</div>
+        {car['ownershipPeriods']['ownershipPeriod'].map((period: any) => 
         <div className='car-info__field'>
-          <h1 className='car-info__field-left'></h1>
-          <h2 className='car-info__fiel-right'></h2>
-        </div>
+          <h1 className='car-info__field-left'>{period['simplePersonType'] == 'Natural' ? "Физическое лицо" : "Юридическое лицо"}</h1>
+          <h2 className='car-info__fiel-right'>С {period['from']} по {period['to'] ? period['to'] : "настоящее время"}</h2>
+        </div>)}
+        
       </div>
       <div className='car-info__section'>
         <div className='car-info__title'>Паспорт ТС</div>
@@ -33,7 +36,7 @@ const CarInfo = (props: any) => {
         </div>
         <div className='car-info__field'>
 
-          <h1 className='car-info__field-left'>issue</h1>
+          <h1 className='car-info__field-left'>Место выдачи</h1>
           <h2 className='car-info__fiel-right'>{car['vehiclePassport']['issue']}</h2>
         </div>
       </div>

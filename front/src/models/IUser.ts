@@ -1,4 +1,4 @@
 export interface IUser {
-    username: string;
+    login: string;
     superUser: boolean;
 }
