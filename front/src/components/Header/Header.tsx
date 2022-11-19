@@ -10,7 +10,7 @@ import './Header.scss'
 
 const Header = () => {
 
-  const { setPrompt } = useActions()
+  const { setPrompt, setIsAuth, setUser } = useActions()
   const { isAuth, user } = useTypedSelector(state => state.auth);
 
   function showDrop(): void {
@@ -29,6 +29,15 @@ const Header = () => {
       document.querySelector(".profile-header__drop")!.classList.remove("_active")
       document.removeEventListener("click", closeIfClicked, false)
     }
+  }
+
+  function logout(){
+    setIsAuth(false)
+    setUser({
+      username: ""
+    })
+    localStorage.removeItem('token')
+
   }
 
   return (
@@ -54,7 +63,7 @@ const Header = () => {
                   <div className='profile-header__links'>
                     <Link to='/' className='profile-header__link'>Профиль</Link>
                     <Link to='/' className='profile-header__link'>Настройки</Link>
-                    <button className='profile-header__link' onClick={() => null}>Выйти</button>
+                    <button className='profile-header__link' onClick={() => logout()}>Выйти</button>
                   </div>
                 </div>
               </div>
