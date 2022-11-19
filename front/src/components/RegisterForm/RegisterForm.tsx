@@ -43,8 +43,8 @@ const RegisterForm = () => {
         <form className='register__form' onSubmit={(e) => sendForm(e)}>
             <Input value={name} setValue={nameSet} placeholder="ФИО" />
             <Input value={login} setValue={loginSet} placeholder="Логин" />
-            <Input value={passwordMain} setValue={passwordMainSet} placeholder="Пароль" />
-            <Input value={passwordSecond} setValue={passwordSecondSet} placeholder="Пароль еще раз" />
+            <Input type="password" value={passwordMain} setValue={passwordMainSet} placeholder="Пароль" />
+            <Input type="password" value={passwordSecond} setValue={passwordSecondSet} placeholder="Пароль еще раз" />
 
             <Button name="Отправить" />
         </form>

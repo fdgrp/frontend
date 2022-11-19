@@ -7,25 +7,24 @@ const AddCarForm = () => {
 
   const [vin, vinSet] = useState<string>("")
   const [captcha, captchaSet] = useState<string>("")
-  const [JSON, JSONSet] = useState<{token: string, base64jpg: string}>({token: "", base64jpg: ""})
+  const [JSONResponse, JSONResponseSet] = useState<{token: string, base64jpg: string}>({token: "", base64jpg: ""})
 
   const getCaptcha = async () => {
 
     const api = new API()
 
-    const response: Response = await api.getRequest("/api/car/captcha")
+    const response: Response = await api.postRequest("/api/car/captcha")
     const responseJSON = response.clone().json()
-    JSONSet(await responseJSON)
-    let image = new Image();
-    image.src = 'data:image/jpeg;base64,' + (await responseJSON)['base64jpg'];
-    document.body.appendChild(image);
+    JSONResponseSet(await responseJSON)    
+    const path = 'data:image/jpeg;base64,' + (await responseJSON)['base64jpg'];
+    (document.getElementById("captcha") as HTMLImageElement).src = path
     
   }
 
   const getCars = async () => {
     const api = new API()
 
-    const response: Response = await api.postRequest("/api/car/get", {})
+    const response: Response = await api.postRequest("/api/car/get")
     const responseJSON = response.clone().json()
     console.log(responseJSON)
   }
@@ -34,7 +33,7 @@ const AddCarForm = () => {
     getCaptcha()
   }, [])
 
-  // XWF0AHL35D0019108
+  // XWF0AHL35D0019108 
 
   const sendForm = async (event: any) => {
 
@@ -45,16 +44,18 @@ const AddCarForm = () => {
       
       vin: vin,
       checkType: "history",
-      captchaToken: JSON['token'],
+      captchaToken: JSONResponse['token'],
       captchaWord: captcha
     })
     const responseJSON = await response.clone().json()
     if(response.status == 200){
-      console.log(responseJSON)
-      getCars()
-
+      console.log(responseJSON['RequestResult']);
+      localStorage.setItem("currentCar", JSON.stringify(responseJSON['RequestResult']))
+      
+      window.location.href = "/check"
     } else {
       getCaptcha()
+      captchaSet("")
     }
 
   }
@@ -65,6 +66,7 @@ const AddCarForm = () => {
       <form className='register__form' onSubmit={(e) => sendForm(e)}>
         <Input value={vin} setValue={vinSet} placeholder="VIN" />
         <Input value={captcha} setValue={captchaSet} placeholder="Captcha" />
+        <img id="captcha" alt="captcha" />
         <Button name="Отправить" />
       </form>
     </div>

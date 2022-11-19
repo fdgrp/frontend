@@ -42,7 +42,7 @@ const LoginForm = () => {
     return (
         <form className='register__form' onSubmit={(e) => sendForm(e)}>
             <Input value={login} setValue={loginSet} placeholder="Логин" />
-            <Input value={password} setValue={passwordSet} placeholder="Пароль" />
+            <Input type="password" value={password} setValue={passwordSet} placeholder="Пароль" />
 
             <Button name="Отправить" />
         </form>

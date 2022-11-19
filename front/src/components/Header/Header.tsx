@@ -55,10 +55,10 @@ const Header = () => {
                 <a className="navbar-header__link">Страховка</a>
               </div>
               <div className="header__profile profile-header">
-                <button className='profile-header__avatar-button'><img className='profile-header__avatar' onClick={() => showProfile()} width={60} height={60} src={""} /></button>
+                <button className='profile-header__avatar-button'><img className='profile-header__avatar' onClick={() => showProfile()} width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></button>
                 <div className='profile-header__drop'>
                   <div className='profile-header__info'>
-                    <Link className='profile-header__avatar-link' to='/'><img className='profile-header__avatar' width={60} height={60} src={""} /></Link>
+                    <Link className='profile-header__avatar-link' to='/'><img className='profile-header__avatar' width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></Link>
                     <div className='profile-header__info-text'>
                       <h1 className='profile-header__name'>Имя</h1>
                     </div>

@@ -33,6 +33,7 @@
 
         width: calc(100wv - 20px);
         @media (max-width: 767px) {
+            padding-top: 20px;
             width: 100%;
             transition: all 0.3s ease 0s;
             flex-direction: column-reverse;
@@ -256,7 +257,7 @@
       top: 8px;
     }
     &._active > span{
-      background-color: rgba(1, 113, 204, 0.733);
+      background-color: rgba(51, 131, 195, 0.73);
     }
     &._active > span::after {
       transform: rotate(45deg);

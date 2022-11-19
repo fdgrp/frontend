@@ -40,8 +40,9 @@
     min-width: 280px;
     text-align: center;
     &__img{
-        height: 280px;
-        width: 280px;
+        height: 140px;
+        padding-bottom: 15px;
+        width: 200px;
         @media (max-width: 767px) {
             display: none;
         }
