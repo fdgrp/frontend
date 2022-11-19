@@ -1,6 +1,7 @@
 import { IPTS } from "./IPTS";
 
 export interface ICar {
+    id: number;
     ownershipPeriods: {
         ownershipPeriod: [{
             lastOperation: string;

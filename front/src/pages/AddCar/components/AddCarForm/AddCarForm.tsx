@@ -26,14 +26,6 @@ const AddCarForm = () => {
 
   }
 
-  const getCars = async () => {
-    const api = new API()
-
-    const response: Response = await api.postRequest("/api/car/get")
-    const responseJSON = response.clone().json()
-    console.log(responseJSON)
-  }
-
   useEffect(() => {
     getCaptcha()
   }, [])

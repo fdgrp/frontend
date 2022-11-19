@@ -26,7 +26,7 @@ const RegisterForm = () => {
 
     event.preventDefault()
     if (passwordMain === passwordSecond) {
-      if (passwordMain.length > passwordLength) {
+      if (passwordMain.length >= passwordLength) {
         errorSet("")
         const userService = new UserService()
         const response: Response = await userService.register(name, login.toLowerCase(), passwordMain)

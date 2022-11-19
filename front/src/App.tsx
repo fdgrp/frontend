@@ -11,9 +11,17 @@ import './styles/App.scss';
 
 const App: FC = () => {
   
-  const { setUser, setIsAuth } = useActions()
+  const { setUser, setIsAuth, setCars } = useActions()
 
   const { prompt } = useTypedSelector(state => state.prompt);
+
+  const getCars = async () => {
+    const api = new API()
+
+    const response: Response = await api.postRequest("/api/car/get")
+    const responseJSON = response.clone().json()
+    setCars(await responseJSON)
+  }
 
   const checkUser = async () => {
     const userService = new UserService()
@@ -36,6 +44,7 @@ const App: FC = () => {
 
   useEffect(() => {
     checkUser()
+    getCars()
   }, [])
 
 

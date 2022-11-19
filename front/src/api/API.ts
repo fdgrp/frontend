@@ -1,5 +1,5 @@
 export class API {
-    link = "http://new.wanilla.ru:8080"
+    link = "https://epts.wanilla.ru"
 
     async postRequest(path: string, data: object = {}){
         return fetch(this.link + path, {

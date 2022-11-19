@@ -89,7 +89,7 @@ const Header = () => {
         </div>
         <div className='header__burger-wrapper' onClick={() => showDrop()}>
 
-          <label className="header__burger burger-header" onClick={() => showDrop()} >
+          <label className="header__burger burger-header" >
             <span className="burger__toggle"></span>
           </label>
         </div>
