@@ -8,7 +8,10 @@ const App: FC = () => {
 
   const { prompt } = useTypedSelector(state => state.prompt);
 
-
+  useEffect(() => {
+    
+  }, [])
+  
 
   return (
     <>

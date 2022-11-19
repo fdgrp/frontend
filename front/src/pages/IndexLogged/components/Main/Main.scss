@@ -20,9 +20,10 @@
 }
 
 .item-main{
+    color: white;
     box-shadow: 0px 0px 3px 0.5px gray;
     position: relative;
-    flex: 0 0 calc(24% - 20px);
+    flex: 0 0 calc(24% - 50px);
     background-color: gray;
     border-radius: 10px;
     @media (max-width: 991px) {
@@ -36,11 +37,11 @@
     margin: 10px;
     height: 100%;
     width: 100%;
-    min-width: 300px;
+    min-width: 280px;
     text-align: center;
     &__img{
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
         @media (max-width: 767px) {
             display: none;
         }

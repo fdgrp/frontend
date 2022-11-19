@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { API } from '../../api/API';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import LoginForm from '../LoginForm/LoginForm';
@@ -37,6 +38,8 @@ const Header = () => {
       username: ""
     })
     localStorage.removeItem('token')
+    const api = new API()
+    api.deleteCookie("access_token")
 
   }
 

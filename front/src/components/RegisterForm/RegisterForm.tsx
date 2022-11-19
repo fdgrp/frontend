@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { API } from '../../api/API'
 import { UserService } from '../../api/UserService'
 import { useActions } from '../../hooks/useActions'
 import { usePost } from '../../hooks/usePost'
@@ -23,13 +24,16 @@ const RegisterForm = () => {
         const userService = new UserService()
         const response: Response = await userService.register(name, login, passwordMain)
         if(response.status == 200){
-            const responseJSON: {token: string, id: number, name: string} = await response.clone().json()
+            const responseJSON: {access_token: string, id: number, name: string} = await response.clone().json()
             setUser({
                 username: responseJSON['name']
             })
             setIsAuth(true)
             setPrompt(<></>)
-            localStorage.setItem("token", responseJSON['token'])
+            localStorage.setItem("access_token", responseJSON['access_token'])
+            
+            const api = new API()
+            api.setCookie("access_token", responseJSON['access_token'], {})
         } else {
             console.log(response.statusText)
         }
