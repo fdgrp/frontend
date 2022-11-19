@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { API } from '../../../../api/API'
 import { useActions } from '../../../../hooks/useActions'
 import { useGet } from '../../../../hooks/useGet'
+import { ICar } from '../../../../models/ICar'
 // import Car from './../../../img/car.jfif'
 // import Plus from './../../../img/plus.jfif'
 
@@ -10,7 +11,7 @@ import "./Main.scss"
 
 const Main = () => {
 
-  const [cars, carsSet] = useState([])
+  const [cars, carsSet] = useState<ICar[]>([])
 
   const { setCars } = useActions()
 
@@ -19,10 +20,21 @@ const Main = () => {
 
     const response: Response = await api.postRequest("/api/car/get")
     const responseJSON = response.clone().json()
-    console.log((await responseJSON)['result'])
+    const result = (await responseJSON)['result']
+    const cars = []
+    
     if (response.status == 200) {
-      setCars((await responseJSON)['result'])
-      carsSet((await responseJSON)['result'])
+      for(let i = 0; i < result.length; i++){
+        const car_info = JSON.parse(result[i]['car_info'])
+        cars.push({
+          id: result[i]['id'] as string,
+          ...car_info
+        })
+      }
+      console.log(cars);
+      
+      setCars(cars)
+      carsSet(cars)
     } else {
 
     }

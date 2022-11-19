@@ -62,6 +62,7 @@
     }
     text-align: center;
     &__link{
+        text-decoration: none;
         font-size: 24px;
         color: white;
 
@@ -158,6 +159,7 @@
     }
 
     &__link {
+        text-decoration: none;
         transition: all 0.1s linear;
         @media (max-width: 767px) {
             font-size: 24px;
@@ -166,7 +168,7 @@
         }
         @media(any-hover: hover){
             &:hover{
-                background-color: rgb(37, 37, 37);
+                background-color: rgb(151, 151, 151);
             }
         }
         cursor: pointer;
@@ -177,7 +179,7 @@
         padding: 5px;
         font-size: 18px;
         white-space: nowrap;
-        color: white;
+        color: black;
 
         display: block;
         text-decoration: none;
@@ -259,7 +261,7 @@
         position: relative;
         width: 40px;
         height: 4px;
-        background-color: black;
+        background-color: white;
         transition: all .3s linear;
         border-radius: 15px;
     }

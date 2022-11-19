@@ -52,8 +52,8 @@ const Header = () => {
           {isAuth ?
             <>
               <div className="header__navbar navbar-header">
-                <a className="navbar-header__link">Мои электромобили</a>
-                <a className="navbar-header__link">Страховка</a>
+                <Link to="/" className="navbar-header__link">Мои электромобили</Link>
+                <Link to="/notRealised" className="navbar-header__link">Страховка</Link>
               </div>
               <div className="header__profile profile-header">
                 <button className='profile-header__avatar-button'><img className='profile-header__avatar' onClick={() => showProfile()} width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></button>
@@ -61,12 +61,12 @@ const Header = () => {
                   <div className='profile-header__info'>
                     <Link className='profile-header__avatar-link' to='/'><img className='profile-header__avatar' width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></Link>
                     <div className='profile-header__info-text'>
-                      <h1 className='profile-header__name'>{user['username']}</h1>
+                      <h1 className='profile-header__name'>{user['username'] ? user['username'] : "Имя"}</h1>
                     </div>
                   </div>
                   <div className='profile-header__links'>
-                    <Link to='/' className='profile-header__link'>Профиль</Link>
-                    <Link to='/' className='profile-header__link'>Настройки</Link>
+                    <Link to='/notRealised' className='profile-header__link'>Профиль</Link>
+                    <Link to='/notRealised' className='profile-header__link'>Настройки</Link>
                     <button className='profile-header__link' onClick={() => logout()}>Выйти</button>
                   </div>
                 </div>

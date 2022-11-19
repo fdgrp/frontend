@@ -4,9 +4,8 @@ import Button from '../../../../components/Button/Button';
 
 import "./CarInfo.scss"
 
-const CarInfo = () => {
+const CarInfo = (props: any) => {
   let car = JSON.parse(localStorage.getItem("currentCar")!)
-  console.log(car);
 
   const addCar = async () => {
     const api = new API()
@@ -91,7 +90,7 @@ const CarInfo = () => {
           <h2 className='car-info__fiel-right'>{car['vehicle']['year']}</h2>
         </div>
       </div>
-      <Button name="Добавить машину" function={addCar} />
+      {!props.id ? <Button name="Добавить машину" function={addCar} /> : <></>}
     </div>
   )
 }

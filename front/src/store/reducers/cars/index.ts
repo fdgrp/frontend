@@ -1,11 +1,11 @@
-import { IUser } from "../../../models/IUser";
+import { ICar } from "../../../models/ICar";
 import { CarsAction, CarsActionEnum, CarsState } from "./types";
 
 
 
 const initialState = {
-    cars: [],
-    user: {} as IUser
+    cars: [] as Array<ICar>,
+ 
 }
 
 export default function carsReducer(state = initialState, action: CarsAction): CarsState {

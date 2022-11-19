@@ -10,12 +10,18 @@ const CarDetail = () => {
 
   const { id } = useParams()
   if(id){
-    console.log(cars)
-
+    for(let i = 0; i < cars.length; i++){
+      let currentCar = cars[i]
+      if(currentCar['id'] == id){
+        console.log(currentCar)
+        localStorage.setItem("currentCar", JSON.stringify(currentCar))
+      }
+    }
+    
   }
   return (
     <>
-      <CarInfo />
+      <CarInfo id={id}/>
     </>
   )
 }
