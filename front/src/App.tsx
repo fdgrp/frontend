@@ -2,6 +2,8 @@ import React, { FC, useEffect } from 'react'
 import { API } from './api/API';
 import { UserService } from './api/UserService';
 import AppRouter from './components/AppRouter';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import { useActions } from './hooks/useActions';
 import { useTypedSelector } from './hooks/useTypedSelector';
 
@@ -19,12 +21,14 @@ const App: FC = () => {
     if (response.status == 200) {
       const responseJSON: { access_token: string, id: number, name: string } = await response.clone().json()
       setUser({
-        username: responseJSON['name']
+        username: responseJSON['name'],
+        superUser: false
       })
       setIsAuth(true)
     } else {
       setUser({
-        username: ""
+        username: "",
+        superUser: false
       })
       setIsAuth(false)
     }
@@ -38,7 +42,9 @@ const App: FC = () => {
   return (
     <>
       {prompt}
+      <Header />
       <AppRouter />
+      <Footer />
     </>
   )
 }

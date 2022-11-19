@@ -9,7 +9,7 @@ const IndexUnlogged: FC = () => {
   }, [])
   
   return (
-    <Header />
+    <></>
   )
 }
 

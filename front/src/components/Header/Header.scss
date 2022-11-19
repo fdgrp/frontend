@@ -23,7 +23,7 @@
         font-size: 30px;
         text-decoration: none;
 
-        color: black;
+        color: white;
     }
 
     &__drop{
@@ -63,6 +63,7 @@
     text-align: center;
     &__link{
         font-size: 24px;
+        color: white;
 
         margin-right: 20px;
         @media (max-width: 767px) {
@@ -161,10 +162,11 @@
         @media (max-width: 767px) {
             font-size: 24px;
             text-align: center;
+            color: black;
         }
         @media(any-hover: hover){
             &:hover{
-                background-color: rgb(199, 198, 198);
+                background-color: rgb(37, 37, 37);
             }
         }
         cursor: pointer;
@@ -175,7 +177,8 @@
         padding: 5px;
         font-size: 18px;
         white-space: nowrap;
-        color: black;
+        color: white;
+
         display: block;
         text-decoration: none;
 

@@ -35,7 +35,8 @@ const Header = () => {
   function logout() {
     setIsAuth(false)
     setUser({
-      username: ""
+      username: "",
+      superUser: false
     })
     localStorage.removeItem('token')
     const api = new API()

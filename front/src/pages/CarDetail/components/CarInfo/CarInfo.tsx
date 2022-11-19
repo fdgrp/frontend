@@ -42,13 +42,8 @@ const CarInfo = () => {
       <div className='car-info__section'>
         <div className='car-info__title'>О машине</div>
         <div className='car-info__field'>
-          <h1 className='car-info__field-left'>Объём двигателя</h1>
-          <h2 className='car-info__fiel-right'>{car['vehicle']['engineVolume']} м3</h2>
-        </div>
-        <div className='car-info__field'>
-
-          <h1 className='car-info__field-left'>Цвет</h1>
-          <h2 className='car-info__fiel-right'>{car['vehicle']['color']}</h2>
+          <h1 className='car-info__field-left'>Номер корпуса</h1>
+          <h2 className='car-info__fiel-right'>{car['vehicle']['bodyNumber']}</h2>
         </div>
         <div className='car-info__field'>
 
@@ -64,6 +59,11 @@ const CarInfo = () => {
 
           <h1 className='car-info__field-left'>Номер двигателя</h1>
           <h2 className='car-info__fiel-right'>{car['vehicle']['engineNumber']}</h2>
+        </div>
+        <div className='car-info__field'>
+
+          <h1 className='car-info__field-left'>Объем двигателя</h1>
+          <h2 className='car-info__fiel-right'>{car['vehicle']['engineVolume']} л</h2>
         </div>
         <div className='car-info__field'>
 

@@ -15,6 +15,10 @@
         font-size: 30px;
         text-align: center;
     }
+    &__link{
+        position: absolute;
+        left: -1000px;
+    }
     &__error{
         color: rgb(224, 38, 38);
         font-size: 20px;

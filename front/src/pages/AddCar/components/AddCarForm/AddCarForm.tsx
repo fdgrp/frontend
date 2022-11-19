@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { API } from '../../../../api/API'
 import Button from '../../../../components/Button/Button'
 import Input from '../../../../components/Input/Input'
@@ -56,7 +57,7 @@ const AddCarForm = () => {
       console.log(responseJSON['RequestResult']);
       localStorage.setItem("currentCar", JSON.stringify(responseJSON['RequestResult']))
 
-      window.history.replaceState(null, "ЭлектроПТС", "/vheck")
+      document.getElementById("hidden-link")!.click()
     } else {
       errorSet((await response.clone().json())['error'])
       getCaptcha()
@@ -66,13 +67,14 @@ const AddCarForm = () => {
   }
   return (
     <>
+      <Link id="hidden-link" className='addcar-form__links' to="/check"></Link>
       <div className='container'>
         <div className='addcar-form'>
           <div className='addcar-form__wrapper'>
             <form className='addcar-form__form' onSubmit={(e) => sendForm(e)}>
               <h1 className='addcar-form__title'>Проверить машину</h1>
-              <Input value={vin} setValue={vinSet} placeholder="VIN" />
-              <Input value={captcha} setValue={captchaSet} placeholder="Captcha" />
+              <Input value={vin} setValue={vinSet} placeholder="ВИН" />
+              <Input value={captcha} setValue={captchaSet} placeholder="Капча" />
               <div className='addcar-form__captcha'>
                 <img id="captcha" alt="captcha" />
               </div>

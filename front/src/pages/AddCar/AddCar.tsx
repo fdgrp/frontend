@@ -5,7 +5,6 @@ import AddCarForm from './components/AddCarForm/AddCarForm'
 const AddCar = () => {
   return (
     <>
-      <Header />
       <AddCarForm />
     </>
   )

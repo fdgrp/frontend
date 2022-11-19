@@ -7,14 +7,14 @@
         flex-wrap: wrap;
     }
     min-height: calc(70vh - 70px);
-    padding: 10vh 0 20vh;
+    padding: 10vh 0 13vh;
     
     display: flex;
     justify-content: center;
     align-items: center;
  
     @media (max-width: 991px) {
-        padding: 10px 0;
+        padding: 10px 0 calc(25vh - 19px);
         height: auto;
     }
 }

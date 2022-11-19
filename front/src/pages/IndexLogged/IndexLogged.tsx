@@ -6,7 +6,6 @@ import Main from './components/Main/Main'
 const IndexLogged = () => {
   return (
     <>
-        <Header />
         <Main />
         
     </>

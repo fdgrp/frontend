@@ -1,7 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Button from '../../components/Button/Button'
-import Header from '../../components/Header/Header'
 import CarInfo from './components/CarInfo/CarInfo'
 
 const CarDetail = () => {
@@ -12,7 +10,6 @@ const CarDetail = () => {
   }
   return (
     <>
-      <Header />
       <CarInfo />
     </>
   )
