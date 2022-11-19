@@ -1,0 +1,12 @@
+.input {
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    outline: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 22px;
+    
+    &::placeholder{
+        font-size: 22px;
+    }
+}

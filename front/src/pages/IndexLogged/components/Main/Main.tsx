@@ -1,5 +1,4 @@
 import React from 'react'
-import RegisterForm from '../../IndexUnlogged/components/RegisterForm/RegisterForm'
 // import Car from './../../../img/car.jfif'
 // import Plus from './../../../img/plus.jfif'
 

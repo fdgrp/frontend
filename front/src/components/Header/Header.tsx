@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import RegisterForm from '../../pages/IndexUnlogged/components/RegisterForm/RegisterForm';
+import LoginForm from '../LoginForm/LoginForm';
 import Prompt from '../Prompt/Prompt';
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 import './Header.scss'
 
@@ -62,6 +63,7 @@ const Header = () => {
             <>
               <button className='profile-header__link' onClick={() => setPrompt(
                 <Prompt title="Войти">
+                  <LoginForm />
                 </Prompt>
               )}>Войти</button>
               <button className='profile-header__link' onClick={() => setPrompt(
