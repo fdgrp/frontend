@@ -9,7 +9,7 @@ import './styles/App.scss';
 
 const App: FC = () => {
   
-  const { setUser, setIsAuth, setPrompt } = useActions()
+  const { setUser, setIsAuth } = useActions()
 
   const { prompt } = useTypedSelector(state => state.prompt);
 

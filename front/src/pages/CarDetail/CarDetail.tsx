@@ -6,20 +6,14 @@ import CarInfo from './components/CarInfo/CarInfo'
 
 const CarDetail = () => {
   const { id } = useParams()
+  if(id){
 
-  console.log(localStorage.getItem("currentCar"))
+
+  }
   return (
     <>
       <Header />
-      {
-        id ? <></>
-          :
-          <>
-            <CarInfo />
-            <Button name="Добавить себе" />
-
-          </>
-      }
+      <CarInfo />
     </>
   )
 }

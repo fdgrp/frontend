@@ -28,9 +28,9 @@ const RegisterForm = () => {
             setUser({
                 username: responseJSON['name']
             })
+            localStorage.setItem("access_token", responseJSON['access_token'])
             setIsAuth(true)
             setPrompt(<></>)
-            localStorage.setItem("access_token", responseJSON['access_token'])
             
             const api = new API()
             api.setCookie("access_token", responseJSON['access_token'], {})

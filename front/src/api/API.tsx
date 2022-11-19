@@ -8,13 +8,10 @@ export class API {
         })
     }
     setCookie(name: string, value: string, options: {[key: string] : any}) {
-
         options = {
           path: '/',
           ...options
         };
-      
-  
       
         let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
       

@@ -20,6 +20,17 @@
 }
 
 .item-main{
+    @media (any-hover: hover) {
+        &:hover{
+            .item-main__plus{
+                filter: blur(2px);
+            }
+            .item-main__img{
+                filter: blur(2px);
+            }
+
+        }
+    }
     color: white;
     box-shadow: 0px 0px 3px 0.5px gray;
     position: relative;
@@ -38,14 +49,30 @@
     height: 100%;
     width: 100%;
     min-width: 280px;
+    min-height: 180px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__img{
+        transition: all 0.3s ease 0s;
         height: 140px;
         padding-bottom: 15px;
         width: 200px;
         @media (max-width: 767px) {
             display: none;
         }
+    }
+    &__plus{
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover{
+                filter: blur(2px);
+
+            }
+        }
+        width: 100px;
+        height: 100px;
     }
     &__title{
         text-align: center;

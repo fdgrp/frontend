@@ -17,8 +17,12 @@ const Main = () => {
     const response: Response = await api.postRequest("/api/car/get")
     const responseJSON = response.clone().json()
     console.log((await responseJSON)['result'])
-    carsSet((await responseJSON)['result'])
+    if (response.status == 200) {
 
+      carsSet((await responseJSON)['result'])
+    } else {
+
+    }
   }
 
   useEffect(() => {
@@ -37,7 +41,7 @@ const Main = () => {
             </Link>
           ) : <></>}
           <Link to='/add' className='main__item item-main'>
-            <img className='item-main__img' height={200} width={300} />
+            <img className='item-main__plus' height={100} width={100} src="https://github.com/fdgrp/res/blob/main/images/plus.png?raw=true" />
             <h1 className='item-main__title'>Добавить или проверить машину</h1>
           </Link>
         </div>

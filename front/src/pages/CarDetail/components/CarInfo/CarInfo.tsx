@@ -1,10 +1,19 @@
 import React from 'react'
+import { API } from '../../../../api/API';
+import Button from '../../../../components/Button/Button';
 
 import "./CarInfo.scss"
 
 const CarInfo = () => {
   let car = JSON.parse(localStorage.getItem("currentCar")!)
   console.log(car);
+
+  const addCar = async () => {
+    const api = new API()
+    api.postRequest("/api/car/add", {
+      car_info: JSON.stringify(car)
+    })
+  }
 
   return (
     <div className='car-info'>
@@ -82,8 +91,8 @@ const CarInfo = () => {
           <h2 className='car-info__fiel-right'>{car['vehicle']['year']}</h2>
         </div>
       </div>
+      <Button name="Добавить машину" function={addCar} />
     </div>
-
   )
 }
 

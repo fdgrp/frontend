@@ -1,4 +1,11 @@
 .input {
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover{
+            border-color: rgba(0, 94, 170, 0.733);
+        }
+    }
+    border: 1.3px solid black;
     box-sizing: border-box;
     width: calc(100% - 10px);
     outline: none;
