@@ -35,7 +35,7 @@ const Main = () => {
       <div className='container'>
         <div className='main__inner'>
           {cars.length ? cars.map((car) =>
-            <Link to={"/" + car['id']} className='main__item item-main'>
+            <Link to={"/cars/" + car['id']} key={car['id']} className='main__item item-main'>
               <img className='item-main__img' height={200} width={300} src="https://github.com/fdgrp/res/blob/main/images/car.png?raw=true" />
               <h1 className='item-main__title'>{car['id']}</h1>
             </Link>

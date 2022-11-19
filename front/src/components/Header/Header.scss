@@ -231,13 +231,23 @@
     }
 }
 
-.header__burger {
+.header__burger-wrapper{
+    cursor: pointer;
+    height: 100%;
+    min-height: 40px;
+
     @media (max-width: 767px) {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     display: none;
-    z-index: 1000;
+}
+
+.header__burger {
     cursor: pointer;
+
+    z-index: 1000;
     & > span,
     & > span::before,
     & > span::after { 

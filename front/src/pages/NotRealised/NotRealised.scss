@@ -1,0 +1,13 @@
+.development{
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    &__title{
+        font-size: 60px;
+        @media (max-width: 767px) {
+            font-size: 30px;
+        }
+    }
+}
