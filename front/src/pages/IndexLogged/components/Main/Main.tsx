@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { API } from '../../../../api/API'
+import { useActions } from '../../../../hooks/useActions'
 import { useGet } from '../../../../hooks/useGet'
 // import Car from './../../../img/car.jfif'
 // import Plus from './../../../img/plus.jfif'
@@ -11,6 +12,8 @@ const Main = () => {
 
   const [cars, carsSet] = useState([])
 
+  const { setCars } = useActions()
+
   const getCars = async () => {
     const api = new API()
 
@@ -18,7 +21,7 @@ const Main = () => {
     const responseJSON = response.clone().json()
     console.log((await responseJSON)['result'])
     if (response.status == 200) {
-
+      setCars((await responseJSON)['result'])
       carsSet((await responseJSON)['result'])
     } else {
 

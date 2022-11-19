@@ -32,7 +32,7 @@ const Header = () => {
     }
   }
 
-  function logout(){
+  function logout() {
     setIsAuth(false)
     setUser({
       username: ""
@@ -88,9 +88,9 @@ const Header = () => {
         </div>
         <div className='header__burger-wrapper' onClick={() => showDrop()}>
 
-        <label className="header__burger burger-header" onClick={() => showDrop()} >
-          <span className="burger__toggle"></span>
-        </label>
+          <label className="header__burger burger-header" onClick={() => showDrop()} >
+            <span className="burger__toggle"></span>
+          </label>
         </div>
       </div>
     </div>

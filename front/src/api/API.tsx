@@ -1,5 +1,5 @@
 export class API {
-    link = "http://10.1.0.149:8080"
+    link = "http://10.1.0.135:8080"
 
     async postRequest(path: string, data: object = {}){
         return fetch(this.link + path, {

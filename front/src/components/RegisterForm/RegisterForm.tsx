@@ -31,9 +31,9 @@ const RegisterForm = () => {
         const userService = new UserService()
         const response: Response = await userService.register(name, login.toLowerCase(), passwordMain)
         if (response.status == 200) {
-          const responseJSON: { access_token: string, id: number, name: string } = await response.clone().json()
+          const responseJSON: { access_token: string, id: number, name: string, login: string } = await response.clone().json()
           setUser({
-            username: responseJSON['name']
+            username: responseJSON['login']
           })
           localStorage.setItem("access_token", responseJSON['access_token'])
           setIsAuth(true)
