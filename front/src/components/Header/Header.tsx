@@ -40,6 +40,7 @@ const Header = () => {
       superUser: false
     })
     localStorage.removeItem('access_token')
+    document.getElementById('logo')?.click()
 
   }
 
@@ -53,6 +54,8 @@ const Header = () => {
               <div className="header__navbar navbar-header">
                 <Link to="/" className="navbar-header__link">Мои электромобили</Link>
                 <Link to="/notRealised" className="navbar-header__link">Страховка</Link>
+                <Link to="/notRealised" className="navbar-header__link">Карта</Link>
+
               </div>
               <div className="header__profile profile-header">
                 <button className='profile-header__avatar-button'><img className='profile-header__avatar' onClick={() => showProfile()} width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></button>
@@ -66,7 +69,6 @@ const Header = () => {
                   <div className='profile-header__links'>
                     <Link to='/notRealised' className='profile-header__link'>Профиль</Link>
                     <Link to='/notRealised' className='profile-header__link'>Настройки</Link>
-                    {user['superUser'] ? <Link to='/admin' className='profile-header__link'>Админ панель</Link> : <></>}
                     <button className='profile-header__link' onClick={() => logout()}>Выйти</button>
                   </div>
                 </div>

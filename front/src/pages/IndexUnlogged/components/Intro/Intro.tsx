@@ -14,7 +14,7 @@ const Intro = () => {
             <img className='intro__img' src='https://github.com/fdgrp/res/blob/main/images/driver.png?raw=true' />
             <div className='intro__inner'>
                 <div className='intro__info'>
-                    <h1 className='intro__title'>Lorem ipsum dolor sit. </h1>
+                    <h1 className='intro__title'>Краснодар будущего </h1>
                     <h2 className='intro__subtitle'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                     <button className="intro__button"  onClick={() => setPrompt(
                         <Prompt title="Регистрация">

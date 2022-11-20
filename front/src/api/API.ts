@@ -1,5 +1,5 @@
 export class API {
-    link = "https://853a-46-18-203-145.eu.ngrok.io"
+    link = "https://6b63-46-18-203-145.eu.ngrok.io/"
 
     async postRequest(path: string, data: object = {}){
         return fetch(this.link + path, {

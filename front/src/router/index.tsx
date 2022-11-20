@@ -18,12 +18,11 @@ export const privateRoutes: IRoute[] = [
   { path: "/check", element: <CarDetail /> },
   { path: "/notRealised", element: <NotRealised /> },
 
+
 ]
 
 export const publicRoutes: IRoute[] = [
   { path: "/", element: <IndexUnlogged /> },
-  { path: "/check", element: <CarDetail /> },
-
   { path: "/notRealised", element: <NotRealised /> },
 
 

@@ -1,9 +1,15 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
-import { usePost } from '../../hooks/usePost'
+import React, { useEffect } from 'react'
 import Main from './components/Main/Main'
 
 const IndexLogged = () => {
+  
+  useEffect(() => {
+    return () => {
+      document.querySelector('.header__drop')?.classList.remove('_active')
+      document.querySelector('.header__burger')?.classList.remove('_active')
+      document.body?.classList.remove('_menu')
+    }
+  }, [])
   return (
     <>
         <Main />

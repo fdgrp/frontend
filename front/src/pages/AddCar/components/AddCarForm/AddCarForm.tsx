@@ -45,13 +45,15 @@ const AddCarForm = () => {
       captchaWord: captcha
     })
     const responseJSON = await response.clone().json()
+    console.log(response);
+    
     if (response.status == 200) {
       console.log(responseJSON['RequestResult']);
       localStorage.setItem("currentCar", JSON.stringify(responseJSON['RequestResult']))
 
       document.getElementById("hidden-link")!.click()
     } else {
-      errorSet((await response.clone().json())['error'])
+      errorSet((await response.clone().json())['message'])
       getCaptcha()
       captchaSet("")
     }

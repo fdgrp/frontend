@@ -7,6 +7,14 @@ import "./CarInfo.scss"
 const CarInfo = (props: any) => {
   let car = JSON.parse(localStorage.getItem("currentCar")!)
 
+  const deleteCar = async () => {
+    const api = new API()
+    api.postRequest("/api/car/del", {
+      car_id: props.id
+    })
+    document.getElementById('logo')?.click()
+  }
+
   const addCar = async () => {
     const api = new API()
     api.postRequest("/api/car/add", {
@@ -93,7 +101,7 @@ const CarInfo = (props: any) => {
           <h2 className='car-info__fiel-right'>{car['vehicle']['year']}</h2>
         </div>
       </div>
-      {!props.id ? <Button name="Добавить машину" function={addCar} /> : <></>}
+      {!props.id ? <Button name="Добавить машину" function={addCar} /> : <Button name="Удаить машину" function={deleteCar} />}
     </div>
   )
 }
