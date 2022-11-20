@@ -76,12 +76,12 @@ const Header = () => {
             </>
             :
             <>
-              <button className='profile-header__link' onClick={() => setPrompt(
+              <button className='profile-header__link-header' onClick={() => setPrompt(
                 <Prompt title="Войти">
                   <LoginForm />
                 </Prompt>
               )}>Войти</button>
-              <button className='profile-header__link' onClick={() => setPrompt(
+              <button className='profile-header__link-header' onClick={() => setPrompt(
                 <Prompt title="Регистрация">
                   <RegisterForm />
                 </Prompt>
