@@ -3,6 +3,7 @@ import AddCar from '../pages/AddCar/AddCar';
 import CarDetail from '../pages/CarDetail/CarDetail';
 import IndexLogged from '../pages/IndexLogged/IndexLogged';
 import IndexUnlogged from '../pages/IndexUnlogged/IndexUnlogged';
+import MapPage from '../pages/MapPage/MapPage';
 import NotRealised from '../pages/NotRealised/NotRealised';
 
 
@@ -16,7 +17,7 @@ export const privateRoutes: IRoute[] = [
   { path: "/add", element: <AddCar /> },
   { path: "/cars/:id", element: <CarDetail /> },
   { path: "/check", element: <CarDetail /> },
-  { path: "/notRealised", element: <NotRealised /> },
+  { path: "/map", element: <MapPage /> },
 
 
 ]

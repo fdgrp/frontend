@@ -52,7 +52,7 @@ const Header = () => {
             <>
               <div className="header__navbar navbar-header">
                 <Link to="/" className="navbar-header__link">Мои электромобили</Link>
-                <Link to="/notRealised" className="navbar-header__link">Карта</Link>
+                <Link to="/map" className="navbar-header__link">Карта</Link>
 
               </div>
               <div className="header__profile profile-header">
