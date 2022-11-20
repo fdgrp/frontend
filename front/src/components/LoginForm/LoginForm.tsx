@@ -11,12 +11,32 @@ const LoginForm = () => {
   const [password, passwordSet] = useState<string>("")
   const [login, loginSet] = useState<string>("")
 
-  const { setUser, setIsAuth, setPrompt } = useActions()
+  const { setUser, setIsAuth, setPrompt, setCars } = useActions()
 
   const [error, errorSet] = useState<string>("")
 
 
+  const getCars = async (token: string) => {
+    const api = new API()
 
+    const response: Response = await api.postRequest("/api/car/get", {"access_token" : token})
+    const responseJSON = response.clone().json()
+    const result = (await responseJSON)['result']
+    const cars = []
+
+    if (response.status == 200) {
+      for (let i = 0; i < result.length; i++) {
+        const car_info = JSON.parse(result[i]['car_info'])
+        cars.push({
+          id: result[i]['id'] as string,
+          ...car_info
+        })
+      }
+      console.log(cars);
+
+      setCars(cars)
+    } 
+  }
 
   const sendForm = async (event: any) => {
 
@@ -31,6 +51,7 @@ const LoginForm = () => {
       })
       localStorage.setItem("access_token", responseJSON['access_token'])
       setIsAuth(true)
+      getCars(responseJSON['access_token'])
       setPrompt(<></>)
     } else {
       errorSet((await response.clone().json())['error'])
