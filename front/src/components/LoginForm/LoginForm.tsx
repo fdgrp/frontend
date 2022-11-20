@@ -47,6 +47,7 @@ const LoginForm = () => {
       const responseJSON: { access_token: string, id: number, name: string, login: string } = await response.clone().json()
       setUser({
         login: responseJSON['login'],
+        token: responseJSON['access_token'],
         superUser: false
       })
       localStorage.setItem("access_token", responseJSON['access_token'])

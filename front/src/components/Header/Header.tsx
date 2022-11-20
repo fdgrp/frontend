@@ -36,6 +36,7 @@ const Header = () => {
     setIsAuth(false)
     setUser({
       login: "",
+      token: "",
       superUser: false
     })
     localStorage.removeItem('token')

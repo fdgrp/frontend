@@ -3,7 +3,8 @@ import { AuthAction, AuthState, AuthActionEnum } from "./types";
 
 
 const initialState = {
-    isAuth: false,
+    isAuth: true,
+    token: "",
     user: {superUser: true} as IUser
 }
 
