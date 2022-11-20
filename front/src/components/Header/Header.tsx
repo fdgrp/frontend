@@ -39,9 +39,7 @@ const Header = () => {
       token: "",
       superUser: false
     })
-    localStorage.removeItem('token')
-    const api = new API()
-    api.deleteCookie("access_token")
+    localStorage.removeItem('access_token')
 
   }
 

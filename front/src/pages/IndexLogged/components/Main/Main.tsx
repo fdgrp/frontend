@@ -19,7 +19,6 @@ const Main = () => {
     const api = new API()
     const response: Response = await api.postRequest("/api/car/get")
     const responseJSON = response.clone().json()
-    console.log(await api.postRequest("/admin/user/all"))
     const result = (await responseJSON)['result']
     const cars = []
 

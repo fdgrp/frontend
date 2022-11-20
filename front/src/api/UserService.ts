@@ -17,7 +17,7 @@ export class UserService {
 
     }
     async get(): Promise<Response> {
-        const response: Response = await this.API.postRequest("/api/user/get", { "access_token": localStorage.getItem("access_token") })
+        const response: Response = await this.API.postRequest("/api/user/get")
         return (await response)
 
     }
