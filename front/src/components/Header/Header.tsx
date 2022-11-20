@@ -37,7 +37,6 @@ const Header = () => {
     setUser({
       login: "",
       token: "",
-      superUser: false
     })
     localStorage.removeItem('access_token')
     document.getElementById('logo')?.click()
@@ -53,7 +52,6 @@ const Header = () => {
             <>
               <div className="header__navbar navbar-header">
                 <Link to="/" className="navbar-header__link">Мои электромобили</Link>
-                <Link to="/notRealised" className="navbar-header__link">Страховка</Link>
                 <Link to="/notRealised" className="navbar-header__link">Карта</Link>
 
               </div>
@@ -61,7 +59,7 @@ const Header = () => {
                 <button className='profile-header__avatar-button'><img className='profile-header__avatar' onClick={() => showProfile()} width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></button>
                 <div className='profile-header__drop'>
                   <div className='profile-header__info'>
-                    <Link className='profile-header__avatar-link' to='/'><img className='profile-header__avatar' width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></Link>
+                    <Link className='profile-header__avatar-link' to='/notRealised'><img className='profile-header__avatar' width={60} height={60} src={"https://github.com/fdgrp/res/blob/main/images/user.png?raw=true"} /></Link>
                     <div className='profile-header__info-text'>
                       <h1 className='profile-header__name'>{user['login'] ? user['login'] : "Имя"}</h1>
                     </div>

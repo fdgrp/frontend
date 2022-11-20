@@ -22,19 +22,19 @@ const CarInfo = (props: any) => {
     })
     document.getElementById('logo')?.click()
   }
-  
+
   return (
     <div className='car-info'>
       <img className='car-info__img' src="https://github.com/fdgrp/res/blob/main/images/car.png?raw=true" width="400" height="200" />
-
+      {car['vehicle']['engineVolume'] ? <h1 className='car-info__ownership'>Этот автомобиль не является электромобилем</h1> : <h1 className='car-info__ownership'>Этот автомобиль является электромобилем</h1>}
       <div className='car-info__section'>
         <div className='car-info__title'>Периоды владения транспортный средством</div>
-        {car['ownershipPeriods']['ownershipPeriod'].map((period: any) => 
-        <div className='car-info__field'>
-          <h1 className='car-info__field-left'>{period['simplePersonType'] == 'Natural' ? "Физическое лицо" : "Юридическое лицо"}</h1>
-          <h2 className='car-info__fiel-right'>С {period['from']} по {period['to'] ? period['to'] : "настоящее время"}</h2>
-        </div>)}
-        
+        {car['ownershipPeriods']['ownershipPeriod'].map((period: any) =>
+          <div className='car-info__field'>
+            <h1 className='car-info__field-left'>{period['simplePersonType'] == 'Natural' ? "Физическое лицо" : "Юридическое лицо"}</h1>
+            <h2 className='car-info__fiel-right'>С {period['from']} по {period['to'] ? period['to'] : "настоящее время"}</h2>
+          </div>)}
+
       </div>
       <div className='car-info__section'>
         <div className='car-info__title'>Паспорт ТС</div>
@@ -101,7 +101,7 @@ const CarInfo = (props: any) => {
           <h2 className='car-info__fiel-right'>{car['vehicle']['year']}</h2>
         </div>
       </div>
-      {!props.id ? <Button name="Добавить машину" function={addCar} /> : <Button name="Удаить машину" function={deleteCar} />}
+      {!props.id ? <Button name="Добавить машину" function={addCar} /> : <Button name="Удалить машину" function={deleteCar} />}
     </div>
   )
 }

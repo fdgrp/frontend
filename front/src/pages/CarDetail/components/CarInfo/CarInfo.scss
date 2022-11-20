@@ -4,6 +4,13 @@
     &__section{
         padding: 10px;
     }
+
+    &__ownership{
+        font-size: 24px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(0, 94, 170, 0.733)
+    }
+
     &__img {
         margin: 50px 0;
         max-width: 100%;

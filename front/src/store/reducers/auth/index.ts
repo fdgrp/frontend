@@ -5,7 +5,7 @@ import { AuthAction, AuthState, AuthActionEnum } from "./types";
 const initialState = {
     isAuth: false,
     token: "",
-    user: {superUser: true} as IUser
+    user: {} as IUser
 }
 
 export default function authReducer(state = initialState, action: AuthAction): AuthState {

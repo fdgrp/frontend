@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { API } from '../../api/API'
 import { UserService } from '../../api/UserService'
 import { useActions } from '../../hooks/useActions'
-import { usePost } from '../../hooks/usePost'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 
@@ -48,7 +47,6 @@ const LoginForm = () => {
       setUser({
         login: responseJSON['login'],
         token: responseJSON['access_token'],
-        superUser: false
       })
       localStorage.setItem("access_token", responseJSON['access_token'])
       setIsAuth(true)

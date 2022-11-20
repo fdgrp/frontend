@@ -67,7 +67,7 @@ const AddCarForm = () => {
           <div className='addcar-form__wrapper'>
             <form className='addcar-form__form' onSubmit={(e) => sendForm(e)}>
               <h1 className='addcar-form__title'>Проверить машину</h1>
-              <Input value={vin} setValue={vinSet} placeholder="ВИН" />
+              <Input value={vin} setValue={vinSet} placeholder="VIN" />
               <Input value={captcha} setValue={captchaSet} placeholder="Капча" />
               <div className='addcar-form__captcha'>
                 <img id="captcha" alt="captcha" />

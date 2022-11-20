@@ -31,14 +31,12 @@ const App: FC = () => {
       setUser({
         login: responseJSON['login'],
         token: responseJSON['access_token'],
-        superUser: false
       })
       setIsAuth(true)
     } else {
       setUser({
         login: "",
         token: "",
-        superUser: false
       })
       setIsAuth(false)
     }

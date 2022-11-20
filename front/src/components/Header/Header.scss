@@ -103,11 +103,11 @@
 
     &__avatar {
 
-
+        margin-left: 0.4px;
+        margin-top: -0.5px;
         cursor: pointer;
         height: 60px;
         width: 60px;
-        border-radius: 50%;
         @media (max-width: 767px) {
             height: 120px;
             width: 120px;
@@ -117,8 +117,10 @@
             width: 60px;
         }
     }
-
+    
     &__avatar-link{
+        border-radius: 50%;
+        border: 3px solid rgba(0, 94, 170, 0.733);
         max-height: 60px;
         max-width: 60px;
         @media (max-width: 767px) {
