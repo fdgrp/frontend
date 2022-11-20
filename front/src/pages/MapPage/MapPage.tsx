@@ -12,7 +12,9 @@ const MapPage = () => {
     const getCars = async () => {
         const response: Response = await api.postRequest("/api/geo/get")
         const responseJSON = await response.clone().json()
-        markersSet([...markers, ...responseJSON])
+        console.log(responseJSON['result']);
+        
+        markersSet([...markers, ...responseJSON['result']])
     }
 
     const getLocation = async () => {
@@ -37,6 +39,7 @@ const MapPage = () => {
 
 const addGeo = async () => {
     getLocation()
+    getCars()
 }
 
 useEffect(() => {
@@ -49,7 +52,7 @@ return (
     <div className='map'>
 
         <Map height={height} defaultCenter={[45.0200, 38.5900]} defaultZoom={11}>
-            {markers.map(marker => <Marker width={50} anchor={[marker['latitude'], marker['longitude']]} />)}
+            {markers.map(marker => <Marker key={marker['latitude']} width={50} anchor={[marker['latitude'], marker['longitude']]} />)}
 
         </Map>
     </div>
